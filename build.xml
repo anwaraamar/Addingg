@@ -1,23 +1,14 @@
+<xmlproperty file=".classpath" collapseAttributes="true" delimiter=";" />
 
-<?xml version="1.0" encoding="UTF-8"?>
-<project default="compile">
-<property name="src.java.dir" location="./src"/>
-<property name="result.dir" location="./targettt"/>
-<property name="result.javaclasses.dir" location="${result.dir}/classes"/>
-<path id="NecessaryLibraries">
-<pathelement location="./mylibb/junitj.jar"/>
 
-<pathelement location="./mylibb/org.hamcrest.core_1.3.0.v201303031735.jar"/>
-
+<path id="eclipse.classpath">
+    <pathelement path="${classpath.classpathentry.path}"/>
 </path>
-<target name="compile">
-<mkdir dir="${result.javaclasses.dir}"/>
-<javac srcdir="${src.java.dir}" destdir="${result.javaclasses.dir}" debug="true"
-includeantruntime="false">
-<classpath>
-<path refid="NecessaryLibraries"/>
-<pathelement location="${result.javaclasses.dir}"/>
-</classpath>
-</javac>
 
-</project>
+
+<target name="compile" depends="init">
+
+    <javac srcdir="${src}" destdir="${build}" updatedProperty="compiled">
+        <classpath refid="eclipse.classpath"/>
+    </javac>
+</target>

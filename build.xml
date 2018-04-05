@@ -48,6 +48,7 @@
 			<taskdef url="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 				<classpath path="D:\Desktop\sonarqube-7.0\lib\scanner\sonar-scanner-engine-shaded-7.0.jar"/>
 			</taskdef>
+			<sonar:sonar\>
 		</target>	
 
 

@@ -12,10 +12,7 @@
 	<property name="sonar.java.binaries" value="./target"/>
 
 		
-	<path id="NecessaryLibraries">
-	<pathelement location="./MyLibraries/junit.jar"/>
-	<pathelement location="./MyLibraries/hamcrest.jar"/>
-	</path>
+	
 	
 
 	<target name="compile">
@@ -29,21 +26,7 @@
 	</target>
 
 
-	<target name="test" depends= "compile">
-		<junit printsummary="on" haltonfailure="true" fork="true">
-			<test name="Testings.testAdd"/>
-			<classpath>
-				<path refid="NecessaryLibraries"/>
-				<pathelement location="compilingFiles"/>
-			</classpath>
-			<formatter type="brief" usefile="false"/>
-			<batchtest>
-				<fileset dir="compilingFiles" includes="Testings/test*.class">
-					</fileset>
-			</batchtest>
-
-		</junit>
-	</target>
+	
 		<target name ="sonar" depends="compile">
 			<taskdef url="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
 				<classpath path="D:\Desktop\sonarqube-7.0\lib\scanner\sonar-scanner-engine-shaded-7.0.jar"/>

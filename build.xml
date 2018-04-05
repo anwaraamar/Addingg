@@ -1,11 +1,8 @@
-<project name="JUnit Testing by Aya , Nour and Anwar" default="test">
+<project>
 
-<target name="compile">
-<mkdir dir="${result.javaclasses.dir}"/>
-<javac srcdir="src" destdir="${result.javaclasses.dir}" debug="true"
-includeantruntime="false">
-
-</javac>
-
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
 
 </project>

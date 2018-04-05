@@ -1,14 +1,15 @@
-<xmlproperty file=".classpath" collapseAttributes="true" delimiter=";" />
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="compile">
+<property name="src.java.dir" location="./src"/>
+<property name="result.dir" location="./targettt"/>
+<property name="result.javaclasses.dir" location="${result.dir}/classes"/>
 
+<target name="compile">
+<mkdir dir="${result.javaclasses.dir}"/>
+<javac srcdir="${src.java.dir}" destdir="${result.javaclasses.dir}" debug="true"
+includeantruntime="false">
 
-<path id="eclipse.classpath">
-    <pathelement path="${classpath.classpathentry.path}"/>
-</path>
-
-
-<target name="compile" depends="init">
-
-    <javac srcdir="${src}" destdir="${build}" updatedProperty="compiled">
-        <classpath refid="eclipse.classpath"/>
-    </javac>
+</javac>
 </target>
+
+</project>
